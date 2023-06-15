@@ -1,0 +1,179 @@
+@font-face {
+    font-family: 'Share Tech Mono';
+    src: url('share-tech-400.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+}
+
+html, body {
+    background-color : #111;
+    padding : 0;
+    margin : 0;
+    width : 100vw;
+    height : 100vh;
+    overflow : hidden;
+    color : #eee;
+    font : 16px "Share Tech Mono";
+}
+
+.layout {
+    display : grid;
+    width : 100vw;
+    height : 100vh;
+    grid-template-columns: 0 auto 0px;
+    grid-template-rows: 0 auto 0;
+    grid-template-areas:
+        "header header header"
+        "left-panel center right-panel"
+        "footer footer footer";
+}
+
+.header {
+    grid-area: header;
+}
+
+.left-panel {
+    grid-area: left-panel;
+}
+
+.center {
+    grid-area: center;
+    position : relative;
+}
+
+.main {
+    position: absolute;
+    width : 100%;
+    height : 100%;
+    z-index: 0;
+}
+
+.resources {
+    display : flex;
+    flex-direction: column;
+
+    cursor : default;
+
+    position : absolute;
+    top : 0;
+    width : 24px;
+    z-index : 1;
+
+}
+
+.first.resources {
+    left : 0;
+}
+.second.resources {
+    right : 0;
+}
+
+.resource {
+    display : flex;
+    flex-direction: row;
+    width : 24px;
+    height : 7.692vh;
+    overflow: visible;
+}
+
+.second.resources .resource {
+    flex-direction: row-reverse;
+}
+
+.resource .name {
+    width : 24px;
+    font-size : 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    color : #CCFF33;
+    background-color : rgba(0,0,0,0.9);
+}
+
+.resource.expensive .name {
+    color: #FF5533;
+}
+
+.resource .values {
+    display : flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    pointer-events: none;
+    justify-content: center;
+    background-color : rgba(0,0,0,0.9);
+}
+
+.resource .value {
+    display : flex;
+    height: 16px;
+    max-height : 3.846vh;
+    overflow: visible;
+	width : 64px;
+	font-size : 14px;
+}
+
+.resource .value.debt {
+    color : #33FF55;
+}
+
+.second.resources .value {
+    flex-direction: row-reverse;
+}
+
+.resource.expensive .value.debt {
+    color : #FF5533;
+}
+
+.time {
+    position: absolute;
+    bottom: 0;
+    height : 16px;
+    width : 100%;
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.right-panel {
+    grid-area: right-panel;
+    overflow : hidden;
+
+    white-space: pre;
+}
+
+.footer {
+    grid-area : footer;
+
+    white-space: pre;
+}
+
+.hover {
+    display : block;
+    position : absolute;
+    background-color: rgba(0,0,10,0.9);
+    padding : 5px;
+    white-space: pre;
+    pointer-events : none;
+    z-index : 10;
+}
+
+.hidden {
+    display : none; !important;
+}
+
+#preload {
+    font : 16px "Share Tech Mono";
+    white-space: pre-line;
+}
+
+.debug {
+    position: absolute;
+    left : 96px;
+    top : 0;
+    width : 50vmin;
+    height: 100vmin;
+    background-color: #111111;
+}

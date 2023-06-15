@@ -1,0 +1,25 @@
+{
+	"short_name": "YAAG",
+	"name": "Yet Another Alphabet Game",
+	"description": "Incremental game with hexagonal grid and letters for resources.",
+	"icons": [{
+		"src": "favicon.png",
+		"type": "image/png",
+		"sizes": "256x256"
+	},{
+		"src": "favicon512.png",
+		"type": "image/png",
+		"sizes": "512x512",
+		"purpose": "any"
+	},{
+		"src": "favicon512m.png",
+		"type": "image/png",
+		"sizes": "512x512",
+		"purpose": "maskable"
+	}],
+	"theme_color": "#000000",
+	"background_color": "#111111",
+	"start_url": "../index.html",
+	"display": "fullscreen",
+	"orientation": "landscape"
+}
