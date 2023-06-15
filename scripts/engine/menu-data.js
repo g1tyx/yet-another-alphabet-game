@@ -105,7 +105,7 @@ complex and efficient structures.`
     },
     move : {
         condition : (data) => data.cell,
-        text: `Move`,
+        text: `移动`,
         color: [0.0, 0.0, 0.4, 1.0],
         hoverInfo: `Move cell or switch position
 with other cell.
@@ -115,7 +115,7 @@ moving cells, don't get lost!`
     },
     disable : {
         condition : (data) => data.cell?.enabled,
-        text: `Disable`,
+        text: `禁用`,
         color: [0.2, 0.2, 0.2, 1.0],
         handler : (data) => data.cell.disable(),
         hoverInfo : `Disable cell's effect.
@@ -125,14 +125,14 @@ quality and experience if applicable.`,
     },
     enable : {
         condition : (data) => data.cell?.enabled === false,
-        text: `Enable`,
+        text: `启用`,
         color: [0.0, 0.2, 0.2, 1.0],
         handler : (data) => data.cell.enable(),
         hoverInfo : `Enable cell's effect.`,
     },
     reset : {
         condition : (data) => data.cell && (data.cell instanceof GameCells.ProducerCell || data.cell instanceof GameCells.PowerCell),
-        text: `Reset`,
+        text: `重置`,
         color: [0.4, 0.2, 0.2, 1.0],
         handler : (data) => data.cell.reset?.(),
         hoverInfo : `Reset cell's level and power.
