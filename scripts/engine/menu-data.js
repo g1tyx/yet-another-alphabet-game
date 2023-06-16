@@ -35,7 +35,7 @@ Power Generator's level.`
     },
     buildQualityGenerator : {
         condition : (data) => !data.cell && game.resources.canPay(GameCells.QualityCell.price()),
-        text: (data) => `Quality\nGenerator\n\n${priceText(GameCells.QualityCell.price())}`,
+        text: (data) => `质量\n生成器\n\n${priceText(GameCells.QualityCell.price())}`,
         color: [0.0, 0.5, 0.0, 1],
         handler : (data) => game.spawnCell(data.position, GameCells.QualityCell),
         hoverInfo: `Quality Generators improve adjacent
@@ -53,7 +53,7 @@ other Quality Generators' effect.
     },
     buildRapidClicker : {
         condition : (data) => !data.cell && game.resources.canPay(GameCells.RapidClickerCell.price()),
-        text: (data) => `Rapid\nClicker\n\n${priceText(GameCells.RapidClickerCell.price())}`,
+        text: (data) => `快速\n点击器\n\n${priceText(GameCells.RapidClickerCell.price())}`,
         color: [0.5, 0.2, 0.0, 1],
         handler : (data) => game.spawnCell(data.position, GameCells.RapidClickerCell),
         hoverInfo: `Rapid Clickers activate adjacent cells
@@ -65,7 +65,7 @@ activate them more.`
     },
     buildTimerCell : {
         condition : (data) => !data.cell && game.resources.canPay(GameCells.TimerCell.price()),
-        text: (data) => `Timed\nClicker\n\n${priceText(GameCells.TimerCell.price())}`,
+        text: (data) => `定时\n点击器\n\n${priceText(GameCells.TimerCell.price())}`,
         color: [0.5, 0.0, 0.0, 1],
         handler : (data) => game.spawnCell(data.position, GameCells.TimerCell),
         hoverInfo: `Timed Clickers activate adjacent cells
@@ -80,7 +80,7 @@ activate them more.`
     },
     buildWideCell : {
         condition : (data) => !data.cell && game.resources.canPay(GameCells.WideClickerCell.price()),
-        text: (data) => `Area\nClicker\n\n${priceText(GameCells.WideClickerCell.price())}`,
+        text: (data) => `区域\n点击器\n\n${priceText(GameCells.WideClickerCell.price())}`,
         color: [0.5, 0.0, 0.2, 1],
         handler : (data) => game.spawnCell(data.position, GameCells.WideClickerCell),
         hoverInfo: `Area clicker activates cells within
@@ -95,7 +95,7 @@ activate them more.`
     },
     buildConductor : {
         condition : (data) => !data.cell && game.resources.canPay(GameCells.ConductorCell.price()),
-        text : (data) => `Conductor\n\n${priceText(GameCells.ConductorCell.price())}`,
+        text : (data) => `导体\n\n${priceText(GameCells.ConductorCell.price())}`,
         color : [0.5,0.5,0.5,1],
         handler : (data) => game.spawnCell(data.position, GameCells.ConductorCell),
         hoverInfo: `Conductor cells can't be activated
