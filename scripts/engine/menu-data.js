@@ -6,7 +6,7 @@ import GameCells from "./game-cells.js"
 const MENU_ITEMS = {
     buildResourceGenerator : {
         condition : (data) => !data.cell && game.resources.canAdd() && game.resources.tryPayDebt(),
-        text: (data) => `Resource ${game.resources.getName(game.resources.nextResource())}\nGenerator\n\nfree / ${priceText(GameCells.ProducerCell.price(game.resources.nextResource()))}`,
+        text: (data) => `资源 ${game.resources.getName(game.resources.nextResource())}\n生成器\n\n免费 / ${priceText(GameCells.ProducerCell.price(game.resources.nextResource()))}`,
         color: [0.5, 0.6, 0.0, 1],
         handler : (data) => game.spawnCell(data.position, GameCells.ProducerCell, game.resources.addResource()),
         hoverInfo: `Resource generators convert earlier
@@ -20,7 +20,7 @@ that generator's resource.`
     },
     buildPowerGenerator : {
         condition : (data) => !data.cell && game.resources.canPay(GameCells.PowerCell.price()),
-        text: (data) => `Power\nGenerator\n\n${priceText(GameCells.PowerCell.price())}`,
+        text: (data) => `能量\n生成器\n\n${priceText(GameCells.PowerCell.price())}`,
         color: [0.3, 0.5, 0.7, 1],
         handler : (data) => game.spawnCell(data.position, GameCells.PowerCell),
         hoverInfo: `Power Generator increases output of
@@ -147,14 +147,14 @@ and experience gained over time.`
     },
     toggleLayer : {
         condition : (data) => data.cell && data.cell instanceof GameCells.ProducerCell,
-        text: (data) => game.map.glyphLayer === data.cell?.resource?.id ? `Show all\nletters` : `Show only\nthis letter`,
+        text: (data) => game.map.glyphLayer === data.cell?.resource?.id ? `显示全部\n字母` : `只显示\n此字母`,
         color: [0.3, 0.5, 0.7, 1.0],
         handler : (data) => game.map.toggleLayer(data.cell?.resource?.id),
         hoverInfo : `View only related power glyphs and gains.\n\nChoose this again to restore view.`,
     },
     levelUp : {
         condition : (data) => data.cell && data.cell.maxLevel > data.cell.level,
-        text: (data) => `Level Up${game.rules.freeLevels?``:`
+        text: (data) => `升级${game.rules.freeLevels?``:`
         
 ${priceText(data.cell?.levelUpPrice())}`}`,
         color: [0.2, 0.5, 0.2, 1.0],
